@@ -27,7 +27,7 @@ export class NotesController {
   @Get(':id')
   async getNote(@Param('id') id: string): Promise<{ note: Note | null }> {
     return await this.notesService.getNote(Number(id));
-  } 
+  }
 
   @Patch(':id')
   async updateNote(
