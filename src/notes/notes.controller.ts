@@ -6,10 +6,13 @@ import {
   Param,
   Patch,
   Post,
+  UseGuards,
 } from '@nestjs/common';
 import { NotesService } from './notes.service';
 import { Note } from 'generated/prisma/client';
+import { AuthGuard } from '../auth.guard';
 
+@UseGuards(AuthGuard)
 @Controller('notes')
 export class NotesController {
   constructor(private readonly notesService: NotesService) {}
